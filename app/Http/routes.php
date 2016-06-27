@@ -11,6 +11,12 @@
 |
 */
 
+Route::group(['prefix' => 'api'], function () {
+  Route::group(['prefix' => 'v1'], function () {
+    Route::get('common/get_bank_types', 'Api\v1\CommonController@get_bank_types');
+  });
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
